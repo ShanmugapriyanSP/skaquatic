@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         mywebView.loadUrl("https://skaquatic.com/");
         WebSettings webSettings=mywebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setUserAgentString(System.getProperty("http.agent"));
     }
 
     public class mywebClient extends WebViewClient{

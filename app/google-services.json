@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "688293800903",
+    "project_id": "skaquatic-85dd2",
+    "storage_bucket": "skaquatic-85dd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688293800903:android:94d45724ff6ea14b2a07e2",
+        "android_client_info": {
+          "package_name": "com.skaquatic.aquarium"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8on-CX32CNmceLwcFb0wOCaAFjg-Dc5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

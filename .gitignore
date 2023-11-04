@@ -14,3 +14,9 @@
 .cxx
 local.properties
 .idea
+*.aab
+*.apk
+*.pepk
+*.jks
+debug
+release

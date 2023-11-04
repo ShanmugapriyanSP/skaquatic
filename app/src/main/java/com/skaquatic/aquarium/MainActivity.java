@@ -2,7 +2,11 @@ package com.skaquatic.aquarium;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -49,8 +53,24 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
+            if (url.startsWith("https://api.whatsapp.com/") || url.startsWith("https://www.facebook.com/") ||
+                    url.startsWith("https://m.facebook.com/") || url.startsWith("https://twitter.com/") ||
+                    url.startsWith("https://mobile.twitter.com/") || url.startsWith("https://www.instagram.com/") ||
+                    url.startsWith("https://www.youtube.com/")) {
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(url));
+                    startActivity(intent);
+                    return true; // We've handled the URL, don't continue loading it in the WebView
+                } catch (ActivityNotFoundException e) {
+                    view.loadUrl(url);
+                    return true;
+                }
+            } else {
+                // Load other URLs in the WebView
+                view.loadUrl(url);
+                return true;
+            }
         }
     }
 
